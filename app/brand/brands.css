@@ -1,0 +1,277 @@
+/* === GENERAL === */
+.brands-page {
+  font-family: 'Inter', sans-serif;
+  color: #171717;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+.highlight {
+  color: #f97316; /* Orange accent from Figma */
+}
+
+.section-sub {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* === HERO SECTION === */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 8%;
+  background: #ffffff;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-text .hero-sub {
+  font-size: 1.125rem;
+  color: #6b7280;
+}
+
+.hero-image-wrapper {
+  flex: 1;
+  position: relative;
+  height: 400px;
+  clip-path: circle(75% at 100% 50%); /* Circular crop to match Figma */
+}
+
+.hero-image {
+  object-fit: cover;
+}
+
+/* === BRANDS SECTION === */
+.brands-section {
+  padding: 4rem 8%;
+  text-align: center;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  width: 20px;
+  height: 20px;
+  color: #888;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  font-size: 1rem;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.brand-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 1rem;
+  border-radius: 0;
+  transition: transform 0.2s ease;
+}
+
+.brand-card:hover {
+  transform: translateY(-4px);
+}
+
+.brand-image-container img {
+  max-height: 60px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0) opacity(0.7); /* Monochrome style */
+}
+
+/* === FEATURES SECTION === */
+.features-section {
+  background: #000000;
+  color: white;
+  padding: 3rem 8%;
+  text-align: center;
+}
+
+.section {
+  display: flex;
+  flex-direction: column; /* image and cards stacked */
+  align-items: center;
+  gap: 2rem;
+}
+
+
+.features-row {
+  display: flex;
+  flex-direction: row; /* cards in a row */
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* wrap for smaller screens */
+}
+
+.feature-card {
+  background: transparent;
+  padding: 1rem;
+  max-width: 300px;
+  text-align: center;
+}
+
+.feature-card img {
+  margin: 0 auto;
+}
+
+.feature-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* === APP SECTION === */
+.app-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 8%;
+  background: #ffffff;
+  flex-wrap: wrap;
+}
+
+.app-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.app-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+
+.store-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.app-images {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.app-images::before {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: #f97316; /* Orange circle background */
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.app-images img {
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
+}
+
+/* === FOOTER === */
+.footer {
+  background: #EEEEEE; /* Dark footer background */
+  color: #121212;
+  padding: 3rem 8%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #121212;
+}
+
+.footer-info {
+  font-size: 0.875rem;
+  color: #121212;
+}
+
+.footer-links {
+  display: flex;
+  gap: 4rem;
+}
+
+.footer-links h4 {
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+  color: #121212;
+}
+
+.footer-links p {
+  font-size: 0.875rem;
+  color: #121212;
+  margin: 0.25rem 0;
+  cursor: pointer;
+}
+
+.footer-links p:hover {
+  color: #f97316;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-image-wrapper {
+    clip-path: none;
+    width: 100%;
+  }
+  .features-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .app-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

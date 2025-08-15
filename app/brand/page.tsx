@@ -1,12 +1,12 @@
 'use client';
 import { useQuery } from '@apollo/client';
-import { GET_BRANDS } from './graphql/queries';
+import { GET_BRANDS } from '../graphql/queries';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useT } from './lib/i18n';
-import './brand/brands.css';
+import { useT } from '../lib/i18n';
+import './brands.css';
 import { useState } from 'react';
-import SearchIcon from './components/icons/SearchIcon';
+import SearchIcon from '../components/icons/SearchIcon';
 
 interface Brand {
   id: string;
@@ -16,7 +16,7 @@ interface Brand {
   categories?: string[];
 }
 
-type TranslationFunction = ReturnType<typeof useT>['t'];
+type TranslationFunction = (key: string) => string;
 
 export default function BrandsPage() {
   const { t } = useT();
@@ -41,12 +41,7 @@ export default function BrandsPage() {
           <p className="hero-sub">{t('hero_sub')}</p>
         </div>
         <div className="hero-image-wrapper">
-          <Image
-            src="hero-guitar.svg"
-            alt="Guitar and amp"
-            fill
-            className="hero-image"
-          />
+          <Image src="hero-guitar.svg" alt="Guitar and amp" fill className="hero-image" />
         </div>
       </section>
 
@@ -80,7 +75,10 @@ export default function BrandsPage() {
       {/* FEATURES SECTION */}
       <section className="features-section">
         <div className="section">
-          <Image src="emri.svg" alt="" width={404} height={404} />
+          <div className="features-image">
+            <Image src="emri.svg" alt="" width={404} height={404} />
+          </div>
+
           <div className="features-row">
             <div className="feature-card">
               <Image src="smooth.svg" alt="" width={40} height={40} />
@@ -106,13 +104,13 @@ export default function BrandsPage() {
         <div className="app-text">
           <h2 dangerouslySetInnerHTML={{ __html: t('app_title') }} />
           <div className="store-buttons">
-            <Image src="/icons/googleplay.svg" alt="Google Play" width={140} height={40} />
-            <Image src="/icons/app-store.png" alt="App Store" width={140} height={40} />
+            <Image src="googleplay.svg" alt="Google Play" width={140} height={40} />
+            <Image src="appstore.svg" alt="App Store" width={140} height={40} />
           </div>
         </div>
         <div className="app-images">
-          <Image src="/images/app-mock1.png" alt="App screen 1" width={200} height={400} />
-          <Image src="/images/app-mock2.png" alt="App screen 2" width={200} height={400} />
+          <Image src="app-mock1.svg" alt="App screen 1" width={200} height={400} />
+          <Image src="app-mock2.svg" alt="App screen 2" width={200} height={400} />
         </div>
       </section>
 
@@ -171,11 +169,7 @@ function BrandsError({ error, t }: { error: Error, t: TranslationFunction }) {
 function NoBrandsFound({ t, searchQuery }: { t: TranslationFunction, searchQuery?: string }) {
   return (
     <div className="empty-state">
-      <p>
-        {searchQuery
-          ? t('no_results')
-          : t('no_brands_found')}
-      </p>
+      <p>{searchQuery ? t('no_results') : t('no_brands_found')}</p>
     </div>
   );
 }
@@ -184,13 +178,7 @@ function BrandCard({ brand }: { brand: Brand }) {
   return (
     <Link href={`/brand/${brand.id}`} className="brand-card">
       <div className="brand-image-container">
-        <Image
-          src={brand.image || '/images/placeholder.png'}
-          alt={brand.name}
-          width={160}
-          height={80}
-          className="brand-image"
-        />
+        <Image src={brand.image || '/images/placeholder.png'} alt={brand.name} width={160} height={80} className="brand-image" />
       </div>
     </Link>
   );

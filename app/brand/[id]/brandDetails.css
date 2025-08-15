@@ -1,0 +1,185 @@
+/* GENERAL */
+.brand-details-page {
+  font-family: 'Inter', sans-serif;
+  color: #222;
+  padding-bottom: 4rem;
+}
+.highlight {
+  color: #FF5C1A;
+}
+
+/* BACK LINK */
+.back-link {
+  display: inline-block;
+  margin: 1rem 4rem;
+  font-size: 0.9rem;
+  color: #888;
+  text-decoration: none;
+}
+.back-link:hover {
+  text-decoration: underline;
+}
+.top-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* HERO SECTION */
+.brand-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 4rem;
+  background: linear-gradient(120deg, #fff 60%, #FF5C1A 60%);
+  border-bottom-right-radius: 50% 8%;
+}
+.brand-text {
+  max-width: 55%;
+}
+.brand-text h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.brand-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+.brand-logo img {
+  border-radius: 50%;
+  background: white;
+  padding: 1rem;
+}
+
+/* GUITAR LIST */
+.guitar-list {
+  margin-top: 3rem;
+  padding: 0 4rem;
+}
+.guitar-list h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+/* FILTERS */
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.filter-select,
+.search-input {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+.search-input {
+  flex: 1;
+}
+
+/* MODELS GRID */
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+.model-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.model-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.12);
+}
+.model-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+.model-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.model-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.page-btn {
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  background: #eee;
+  cursor: pointer;
+}
+.page-btn.active {
+  background: #FF5C1A;
+  color: white;
+}
+
+/* FOOTER */
+.footer {
+  background: #f8f8f8;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+.footer-left {
+  max-width: 250px;
+}
+.footer-left span {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.footer-links {
+  display: flex;
+  gap: 3rem;
+}
+.footer-links h4 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.footer-links p {
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .brand-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  .brand-text {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .guitar-list {
+    padding: 0 2rem;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
